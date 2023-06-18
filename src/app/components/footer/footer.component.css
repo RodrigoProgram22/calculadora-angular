@@ -1,0 +1,10 @@
+.icon-footer{
+    color: #f40707;
+    transition: all 0.2s;
+}
+.icon-footer:hover{
+    color: #d63636;
+}
+a{
+ text-decoration: none;
+}

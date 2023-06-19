@@ -15,63 +15,96 @@
               id="calculadora"
               type="text"
               class="form-control mb-3 input-calcu"
-              value="0"
+              placeholder="0"
+              [value]="this.valorMostrar"
               disabled
             />
             <div class="row my-1">
               <div class="col-3">
-                <button class="btn btn-secondary btn-block">7</button>
+                <button class="btn btn-secondary btn-block" (click)="sumNum(7)">
+                  7
+                </button>
               </div>
               <div class="col-3">
-                <button class="btn btn-secondary btn-block">8</button>
+                <button class="btn btn-secondary btn-block" (click)="sumNum(8)">
+                  8
+                </button>
               </div>
               <div class="col-3">
-                <button class="btn btn-secondary btn-block">9</button>
+                <button class="btn btn-secondary btn-block" (click)="sumNum(9)">
+                  9
+                </button>
               </div>
               <div class="col-3">
-                <button class="btn btn-primary btn-block">+</button>
-              </div>
-            </div>
-            <div class="row my-1">
-              <div class="col-3">
-                <button class="btn btn-secondary btn-block">4</button>
-              </div>
-              <div class="col-3">
-                <button class="btn btn-secondary btn-block">5</button>
-              </div>
-              <div class="col-3">
-                <button class="btn btn-secondary btn-block">6</button>
-              </div>
-              <div class="col-3">
-                <button class="btn btn-primary btn-block">-</button>
+                <button class="btn btn-primary btn-block" (click)="suma()">
+                  +
+                </button>
               </div>
             </div>
             <div class="row my-1">
               <div class="col-3">
-                <button class="btn btn-secondary btn-block">1</button>
+                <button class="btn btn-secondary btn-block" (click)="sumNum(4)">
+                  4
+                </button>
               </div>
               <div class="col-3">
-                <button class="btn btn-secondary btn-block">2</button>
+                <button class="btn btn-secondary btn-block" (click)="sumNum(5)">
+                  5
+                </button>
               </div>
               <div class="col-3">
-                <button class="btn btn-secondary btn-block">3</button>
+                <button class="btn btn-secondary btn-block" (click)="sumNum(6)">
+                  6
+                </button>
               </div>
               <div class="col-3">
-                <button class="btn btn-primary btn-block">x</button>
+                <button class="btn btn-primary btn-block" (click)="resta()">
+                  -
+                </button>
               </div>
             </div>
             <div class="row my-1">
               <div class="col-3">
-                <button class="btn btn-secondary btn-block">CE</button>
+                <button class="btn btn-secondary btn-block" (click)="sumNum(1)">
+                  1
+                </button>
               </div>
               <div class="col-3">
-                <button class="btn btn-secondary btn-block">0</button>
+                <button class="btn btn-secondary btn-block" (click)="sumNum(2)">
+                  2
+                </button>
               </div>
               <div class="col-3">
-                <button class="btn btn-primary btn-block">/</button>
+                <button class="btn btn-secondary btn-block" (click)="sumNum(3)">
+                  3
+                </button>
               </div>
               <div class="col-3">
-                <button class="btn btn-success btn-block">=</button>
+                <button class="btn btn-primary btn-block" (click)="multi()">
+                  *
+                </button>
+              </div>
+            </div>
+            <div class="row my-1">
+              <div class="col-3">
+                <button class="btn btn-secondary btn-block" (click)="reset()">
+                  CE
+                </button>
+              </div>
+              <div class="col-3">
+                <button class="btn btn-secondary btn-block" (click)="sumNum(0)">
+                  0
+                </button>
+              </div>
+              <div class="col-3">
+                <button class="btn btn-primary btn-block" (click)="divid()">
+                  /
+                </button>
+              </div>
+              <div class="col-3">
+                <button class="btn btn-success btn-block" (click)="resultado()">
+                  =
+                </button>
               </div>
             </div>
           </div>

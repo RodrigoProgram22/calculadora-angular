@@ -93,6 +93,7 @@ button:active {
   border: 0.125em solid #1a1a1a;
   color: #fff;
   background-color: #1a1a1a70;
+  text-align: right;
 }
 .input-calcu::placeholder {
   color: #fff;

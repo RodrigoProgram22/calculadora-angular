@@ -10,7 +10,11 @@ export class AppComponent {
   valorMostrar: any = '';
 
   sumNum(x: number) {
-    this.valorMostrar += x;
+    if (this.valorMostrar == 'Error!') {
+      this.valorMostrar = x;
+    } else {
+      this.valorMostrar += x;
+    }
   }
   suma() {
     this.valorMostrar += ' + ';

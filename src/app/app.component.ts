@@ -13,7 +13,7 @@ export class AppComponent {
     if (this.valorMostrar == 'Error!') {
       this.valorMostrar = x;
     } else {
-      this.valorMostrar += x;
+      this.valorMostrar = this.valorMostrar + x.toString();
     }
   }
   suma() {

@@ -7,7 +7,7 @@
         <div class="card-inner text-center">
           <div class="card-body">
             <header>
-              <h4 class="card-title text-center text-light fuente1 my-2">
+              <h4 class="card-title text-center fuente1 my-2">
                 Calculadora
               </h4>
             </header>
@@ -19,6 +19,31 @@
               [value]="this.valorMostrar"
               disabled
             />
+            <div class="row my-1">
+              <div class="col-3">
+                <button class="btn btn-primary btn-block" (click)="reset()">
+                  CE
+                </button>
+              </div>
+              <div class="col-3">
+                <button class="btn btn-primary btn-block" (click)="divid()">
+                  ÷
+                </button>
+              </div>
+              <!-- <div class="col-3">
+                <button class="btn btn-secondary btn-block" (click)="porcentaje()" disabled>
+                  %
+                </button>
+              </div> -->
+              <div class="col-6 delete">
+                <button
+                  class="btn btn-primary btn-block"
+                  (click)="borrarUltimoNum()"
+                >
+                  <i class="bi bi-backspace"></i>
+                </button>
+              </div>
+            </div>
             <div class="row my-1">
               <div class="col-3">
                 <button class="btn btn-secondary btn-block" (click)="sumNum(7)">
@@ -81,14 +106,17 @@
               </div>
               <div class="col-3">
                 <button class="btn btn-primary btn-block" (click)="multi()">
-                  *
+                  x
                 </button>
               </div>
             </div>
             <div class="row my-1">
               <div class="col-3">
-                <button class="btn btn-secondary btn-block" (click)="reset()">
-                  CE
+                <button
+                  class="btn btn-primary btn-block"
+                  (click)="sumNum('.')"
+                >
+                  .
                 </button>
               </div>
               <div class="col-3">
@@ -96,13 +124,8 @@
                   0
                 </button>
               </div>
-              <div class="col-3">
-                <button class="btn btn-primary btn-block" (click)="divid()">
-                  /
-                </button>
-              </div>
-              <div class="col-3">
-                <button class="btn btn-success btn-block" (click)="resultado()">
+              <div class="col-3 igual">
+                <button class="btn btn-primary btn-block" (click)="resultado()">
                   =
                 </button>
               </div>

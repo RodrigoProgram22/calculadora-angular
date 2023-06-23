@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'calculadora-angular';
   valorMostrar: any = '';
 
-  sumNum(x: number) {
+  sumNum(x: any) {
     if (this.valorMostrar == 'Error!') {
       this.valorMostrar = x;
     } else {
@@ -30,6 +30,17 @@ export class AppComponent {
   }
   reset() {
     this.valorMostrar = '';
+  }
+
+  eliminarUltimaLetra(texto: string): string {
+   if (texto.length === 0) {
+     return texto;
+   } else {
+     return texto.slice(0, -1);
+   }
+ }
+  borrarUltimoNum() {
+    this.valorMostrar = this.eliminarUltimaLetra(this.valorMostrar);
   }
   resultado() {
     try {

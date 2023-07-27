@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,7 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'calculadora-angular';
+  valorDolar!: number;
   valorMostrar: any = '';
+  constructor(private http: HttpClient) {
+    this.obtenerValorDolar();
+  }
+
+  obtenerValorDolar() {
+    const apiUrl = 'https://api.bluelytics.com.ar/v2/latest';
+    this.http.get<any>(apiUrl).subscribe((data) => {
+      // Aquí puedes acceder a los datos obtenidos de la API
+      this.valorDolar = data.blue.value_avg;
+    });
+  }
 
   sumNum(x: any) {
     if (this.valorMostrar == 'Error!') {
@@ -31,14 +43,21 @@ export class AppComponent {
   reset() {
     this.valorMostrar = '';
   }
-
+  dolar() {
+    try {
+      this.valorMostrar = eval(this.valorMostrar);
+      this.valorMostrar = this.valorMostrar * this.valorDolar;
+    } catch (error) {
+      this.valorMostrar = 'Error!';
+    }
+  }
   eliminarUltimaLetra(texto: string): string {
-   if (texto.length === 0) {
-     return texto;
-   } else {
-     return texto.slice(0, -1);
-   }
- }
+    if (texto.length === 0) {
+      return texto;
+    } else {
+      return texto.slice(0, -1);
+    }
+  }
   borrarUltimoNum() {
     this.valorMostrar = this.eliminarUltimaLetra(this.valorMostrar);
   }

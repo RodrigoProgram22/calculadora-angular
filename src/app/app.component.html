@@ -7,9 +7,7 @@
         <div class="card-inner text-center">
           <div class="card-body">
             <header>
-              <h1 class="card-title text-center fuente1 my-2">
-                Calculadora
-              </h1>
+              <h1 class="card-title text-center fuente1 my-2">Calculadora</h1>
             </header>
             <input
               id="calculadora"
@@ -26,21 +24,16 @@
                 </button>
               </div>
               <div class="col-3">
-                <button class="btn btn-primary btn-block" (click)="divid()">
-                  ÷
+                <button class="btn btn-primary btn-block" (click)="borrarUltimoNum()">
+                  <i class="bi bi-backspace"></i>
                 </button>
               </div>
-              <!-- <div class="col-3">
-                <button class="btn btn-secondary btn-block" (click)="porcentaje()" disabled>
-                  %
-                </button>
-              </div> -->
               <div class="col-6 delete">
                 <button
                   class="btn btn-primary btn-block"
-                  (click)="borrarUltimoNum()"
+                  (click)="dolar()"
                 >
-                  <i class="bi bi-backspace"></i>
+                  DOLAR
                 </button>
               </div>
             </div>
@@ -112,10 +105,7 @@
             </div>
             <div class="row my-1">
               <div class="col-3">
-                <button
-                  class="btn btn-primary btn-block"
-                  (click)="sumNum('.')"
-                >
+                <button class="btn btn-primary btn-block" (click)="sumNum('.')">
                   .
                 </button>
               </div>
@@ -124,7 +114,12 @@
                   0
                 </button>
               </div>
-              <div class="col-3 igual">
+              <div class="col-3">
+                <button class="btn btn-primary btn-block" (click)="divid()">
+                  ÷
+                </button>
+              </div>
+              <div class="col-3">
                 <button class="btn btn-primary btn-block" (click)="resultado()">
                   =
                 </button>

@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center align-items-center vh-100">
+<div class="d-flex justify-content-center align-items-center my-5">
   <div class="container card-1 mx-auto">
     <div class="circle"></div>
     <div class="circle"></div>
@@ -24,15 +24,15 @@
                 </button>
               </div>
               <div class="col-3">
-                <button class="btn btn-primary btn-block" (click)="borrarUltimoNum()">
+                <button
+                  class="btn btn-primary btn-block"
+                  (click)="borrarUltimoNum()"
+                >
                   <i class="bi bi-backspace"></i>
                 </button>
               </div>
               <div class="col-6 delete">
-                <button
-                  class="btn btn-primary btn-block"
-                  (click)="dolar()"
-                >
+                <button class="btn btn-primary btn-block" (click)="dolar()">
                   DOLAR
                 </button>
               </div>
@@ -131,4 +131,12 @@
     </div>
   </div>
 </div>
+
+<div class="dolar-container text-center mb-4">
+  <div class="dolar-card px-4 py-2">
+    <span class="dolar-label">Dólar Blue: </span>
+    <span class="dolar-value">${{ valorDolar | number: "1.2-2" }}</span>
+  </div>
+</div>
+
 <app-footer></app-footer>
